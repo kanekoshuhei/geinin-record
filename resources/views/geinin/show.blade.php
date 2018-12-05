@@ -35,7 +35,7 @@
 
   <div class="row">
   @foreach ($youtubes as $youtube)
-  <div class="col-6">
+  <div class="col-6 col-md-3">
     <div class="card" style="margin-bottom:15px;">
       <iframe class="card-img-top" src={{"https://www.youtube.com/embed/" . $youtube['items'][0]['id'] . "?showinfo=0"}} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
       </iframe>
