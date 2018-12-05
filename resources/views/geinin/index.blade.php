@@ -1,20 +1,45 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <title>GEININ RECORD</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  </head>
-  <body>
-    <h3>GEININS</h3>
-    <div class="list-group">
+@extends('layout.common')
+
+@section('title', '芸人RECORD')
+@section('keywords', 'A,B,C')
+@section('description', '説明文')
+@section('pageCss')
+@endsection
+
+@include('layout.head')
+
+@include('layout.header')
+
+@section('content')
+<div class="container-fluid">
+  <div class="text-right">
+    <p style="margin: 15px 0 0 0;">並び替え：<a href="/?orderby=name">名前</a>&nbsp;<a href="/?orderby=formed_year">芸歴</a></p>
+  </div>
+  <div class="row">
     @foreach ($geinins as $geinin)
-      <li class="list-group-item"><a href="/show/{{ $geinin->id }}">{{ $geinin->name }}</a></li>
-    @endforeach
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="/show/{{ $geinin->id }}">
+        <div class="card" style="margin:15px 0;">
+          <img class="card-img-top" src={{"https://i.ytimg.com/vi/" . $geinin->image . "/mqdefault.jpg"}}>
+          <div class="card-body text-center" style="background:none; padding:10px;">
+            <p class="card-title" style="color:#5A6169;"><strong>{{ $geinin->name }}</strong></p>
+          </div>
+        </div>
+      </a>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </body>
-</html>
+    @endforeach
+  </div>
+</div>
+@endsection
+
+@include('layout.sub')
+
+@section('pageSub')
+  <p>個別サイドバーの内容</p>
+@endsection
+
+@section('pageJs')
+  <script src="/js/page.js"></script>
+@endsection
+
+{{-- @include('layout.footer') --}}
