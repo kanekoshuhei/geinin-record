@@ -1,6 +1,6 @@
 @section('head')
 <meta charset="UTF-8">
-<title>@yield('title') | cly7796.net</title>
+<title>@yield('title') | 芸人のネタを観るならGEININ RECORD</title>
 <meta name="description" itemprop="description" content="@yield('description')">
 <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">

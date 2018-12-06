@@ -1,6 +1,6 @@
 @extends('layout.common')
 
-@section('title', 'ページタイトル')
+@section('title', $geinin->name)
 @section('keywords', 'A,B,C')
 @section('description', '説明文')
 @section('pageCss')
@@ -47,7 +47,6 @@
   @endforeach
   </div>
 
-</>
 @endsection
 
 @include('layout.sub')

@@ -11,13 +11,13 @@
 @include('layout.header')
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
   <div class="text-right">
     <p style="margin: 15px 0 0 0;">並び替え：<a href="/?orderby=name">名前</a>&nbsp;<a href="/?orderby=formed_year">芸歴</a></p>
   </div>
   <div class="row">
     @foreach ($geinins as $geinin)
-    <div class="col-6 col-sm-4 col-md-3">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
       <a href="/show/{{ $geinin->id }}">
         <div class="card" style="margin:15px 0;">
           <img class="card-img-top" src={{"https://i.ytimg.com/vi/" . $geinin->image . "/mqdefault.jpg"}}>
