@@ -1,4 +1,4 @@
-@extends('layout.common')
+@extends('layouts.common')
 
 @section('title', $geinin->name)
 @section('keywords', 'A,B,C')
@@ -6,9 +6,9 @@
 @section('pageCss')
 @endsection
 
-@include('layout.head')
+@include('layouts.head')
 
-@include('layout.header')
+@include('layouts.header')
 
 @section('content')
 <div class="container">
@@ -49,7 +49,7 @@
 
 @endsection
 
-@include('layout.sub')
+@include('layouts.sub')
 
 @section('pageSub')
     <p>個別サイドバーの内容</p>

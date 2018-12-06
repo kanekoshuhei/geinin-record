@@ -13,7 +13,10 @@
 
 Route::get('/', 'GeininController@index');
 Route::get('show/{id}', 'GeininController@show');
-Route::get('geinin/create', 'GeininController@create');
+Route::get('geinin/create', 'GeininController@create')->middleware('auth');
 Route::post('geinin/create', 'GeininController@store');
-Route::get('video/create', 'VideoController@create');
+Route::get('video/create', 'VideoController@create')->middleware('auth');
 Route::post('video/create', 'VideoController@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

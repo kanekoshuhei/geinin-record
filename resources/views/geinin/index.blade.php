@@ -1,4 +1,4 @@
-@extends('layout.common')
+@extends('layouts.common')
 
 @section('title', '芸人RECORD')
 @section('keywords', 'A,B,C')
@@ -6,9 +6,9 @@
 @section('pageCss')
 @endsection
 
-@include('layout.head')
+@include('layouts.head')
 
-@include('layout.header')
+@include('layouts.header')
 
 @section('content')
 <div class="container">
@@ -32,7 +32,7 @@
 </div>
 @endsection
 
-@include('layout.sub')
+@include('layouts.sub')
 
 @section('pageSub')
   <p>個別サイドバーの内容</p>
