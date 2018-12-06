@@ -62,6 +62,11 @@ class GeininController extends Controller
     public function store(Request $request) {
         $geinin = new Geinin;
         $geinin->name = $request->name;
+        $geinin->member_1 = empty($request->member_1) ? NULL : $request->member_1;
+        $geinin->member_2 = empty($request->member_2) ? NULL : $request->member_2;
+        $geinin->member_3 = empty($request->member_3) ? NULL : $request->member_3;
+        $geinin->member_4 = empty($request->member_4) ? NULL : $request->member_4;
+        $geinin->member_5 = empty($request->member_5) ? NULL : $request->member_5;
         $geinin->office = $request->office;
         $geinin->formed_year = $request->formed_year;
         $geinin->save();
